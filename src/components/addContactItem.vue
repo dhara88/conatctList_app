@@ -1,58 +1,55 @@
 <template>
     <v-app>
-        
-    <div v-if="display">
+        <div v-if="display">
             <v-form >
-            
-            <v-text-field
-            v-model="name"
-            :counter="10"
-            :rules="nameRules"
-            label="Name"
-            required
-            ></v-text-field>
+                <v-text-field
+                v-model="name"
+                :counter="10"
+                :rules="nameRules"
+                label="Name"
+                required
+                ></v-text-field>
 
-            <v-text-field
-            v-model="email"
-            :rules="emailRules"
-            label="E-mail"
-            required
-            ></v-text-field>
+                <v-text-field
+                v-model="email"
+                :rules="emailRules"
+                label="E-mail"
+                required
+                ></v-text-field>
 
-            <v-text-field
-            v-model="number"
-            :counter="10"
-            :rules="numberRules"
-            label="Number"
-            required
-            ></v-text-field>
+                <v-text-field
+                v-model="number"
+                :counter="10"
+                :rules="numberRules"
+                label="Number"
+                required
+                ></v-text-field>
 
-            <v-text-field
-            v-model="notes"
-            label="Notes"
-            required
-            ></v-text-field>
+                <v-text-field
+                v-model="notes"
+                label="Notes"
+                required
+                ></v-text-field>
 
-            <v-file-input
-            accept="image/*"
-            label="File input"
-            ></v-file-input>
+                <v-file-input
+                accept="image/*"
+                label="File input"
+                ></v-file-input>
 
-            
-            <v-btn
-            :disabled="!valid"
-            color="success"
-            class="mr-4"
-            @click="addContact"
-            >Submit
-            </v-btn>
 
-             <v-btn
-            color="primary"
-            class="mr-4"
-            to="/" >ContactList
-            </v-btn>
-              
+                <v-btn
+                :disabled="!valid"
+                color="success"
+                class="mr-4"
+                @click="addContact"
+                >Submit
+                </v-btn>
+
+                 <v-btn
+                color="primary"
+                class="mr-4"
+                to="/" >ContactList
+                </v-btn>
             </v-form>
          </div>
     </v-app>
@@ -87,8 +84,6 @@
         methods: {
             addContact(e){
                 e.preventDefault();
-              
-
                     const newContact = {
                         name: this.name,
                         email:this.email,
@@ -96,10 +91,8 @@
                         notes:this.notes,
                         id: Math.floor(Math.random() * 100)
                     };
-
                     if (newContact.name !== '' || newContact.email !== '' || newContact.notes !== '' || newContact.number !== ''){
                         this.contacts =  [...this.contacts,newContact];
-
                     }
                     this.name = '',
                     this.email = '',
