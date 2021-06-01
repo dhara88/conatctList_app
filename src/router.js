@@ -33,22 +33,6 @@ const routes = [
   ];
   
   
-  const router = new VueRouter({ mode: 'history', routes: routes });
-  
-  router.beforeResolve((to, from, next) => {
-    if (to.name) {
-        // NProgress.start()
-    }
-    next()
-  });
-  // router.beforeEach((to, from, next) => {
-  //   if (to.name !== 'Login' && !isAuthenticated) next({ name: 'Login' })
-  //   else next()
-  // })
-  router.afterEach(() => {
-    // NProgress.done()
-  });
-  
-  
-
+  const router = new VueRouter({ mode: 'history', routes: routes });  
+ 
   export default router
