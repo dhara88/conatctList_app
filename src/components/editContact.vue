@@ -1,7 +1,6 @@
 <template>
-<v-app>
+    <v-app>
         <v-form >
-            
             <v-text-field
             v-model="this.contacts.name"
             :counter="10"
@@ -50,7 +49,6 @@
             to="/"
             >Back
             </v-btn>
-
         </v-form>
     </v-app>
 </template>
@@ -85,9 +83,7 @@
         },
         methods: {
             editContact(e){
-                
                 e.preventDefault();
-                
                     const contactItem = {
                         name: this.name,
                         email:this.email,
@@ -101,8 +97,7 @@
                     this.number = '';
                     this.notes = '';
                     this.edit = false;
-                
-            },
+               },
    
         },
         watch: {      
@@ -113,7 +108,7 @@
             deep: true
             },
     
-     mounted() {
+        mounted() {
         if (localStorage.getItem("contacts")){
             this.contacts = JSON.parse(localStorage.getItem("contacts"))
         }
